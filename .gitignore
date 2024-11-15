@@ -1,1 +1,5 @@
 ﻿.vs
+HR_Management.Application/bin
+HR_Management.Application/obj
+HR_Management.Domain/obj
+HR_Management.Domain/bin
