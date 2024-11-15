@@ -529,11 +529,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Noafra\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
+      "projectUniqueName": "C:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
       "projectName": "HR_Management.Application",
-      "projectPath": "D:\\Projects\\Noafra\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
+      "projectPath": "C:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
       "packagesPath": "C:\\Users\\Yoones\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Noafra\\HR_Management\\HR_Management.Application\\obj\\",
+      "outputPath": "C:\\Projects\\HR_Management\\HR_Management.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Yoones\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -544,14 +544,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Projects\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "D:\\Projects\\Noafra\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj": {
-              "projectPath": "D:\\Projects\\Noafra\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj"
+            "C:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj": {
+              "projectPath": "C:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj"
             }
           }
         }

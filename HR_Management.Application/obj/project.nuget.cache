@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "agnN5DSEC511/J0zpG/Wu8hxsnrm7WkLHWtSrUoqxhRM1vxiw0i0UzR61PyT8NyomH9Mv6hBVUMVDp3F3kiqhQ==",
+  "dgSpecHash": "38IFPbhFaTaAk9rFuv+FXVMaSUH8weaMC2rs2C5SJelX6QtR7o1QJ+0UcHjWTHWa2FS25ALusUxX4P5UpZ7I2Q==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Noafra\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
+  "projectFilePath": "C:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yoones\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Yoones\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

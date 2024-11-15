@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UEqbPsngC8wTuZlQ6nvY3+iDFP2i5lO4/BnUwiN63l81YCT4byNCra3p9YXw5s+IFqApLK81iaWd7S8MktYYrA==",
+  "dgSpecHash": "hyPGbdWTLttKtiYbjeL/jb9l9YsXqpcQQjGUvN8EIat21+fOtIwV736A3U8yqja8vYnWOnyy1hG2cQzg9RBuBw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Noafra\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj",
+  "projectFilePath": "C:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
