@@ -9,12 +9,7 @@ namespace HR_Management.Application.DTOs.LeaveType.Validators
     {
         public CreateLeaveTypeDTOValidator()
         {
-            RuleFor(x => x.Name)
-                .NotEmpty().WithMessage("{PropertyName} must not be empty!")
-                .NotNull().WithMessage("{PropertyName} must not be null!");
-            RuleFor(x=>x.DefaultDay)
-                .NotEmpty().WithMessage("{PropertyName} must not be empty!")
-                .NotNull().WithMessage("{PropertyName} must not be null!");
+            Include(new ILeaveTypeDTOValidator());
         }
     }
 }
