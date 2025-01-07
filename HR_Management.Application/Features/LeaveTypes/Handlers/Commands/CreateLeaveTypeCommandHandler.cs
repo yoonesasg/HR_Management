@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HR_Management.Application.DTOs.LeaveType.Validators;
+using HR_Management.Application.Exceptions;
 using HR_Management.Application.Features.LeaveTypes.Requests.Commands;
 using HR_Management.Application.Persistence.Contracts;
 using HR_Management.Domain;
@@ -24,7 +25,7 @@ namespace HR_Management.Application.Features.LeaveTypes.Handlers.Commands
             var validator = new CreateLeaveTypeDTOValidator();
             var validation = validator.Validate(request.CreateLeaveTypeDTO);
             if (validation.IsValid == false)
-                return 0;
+                throw new ValidationException(validation);
 
             var leaveType = _mapper.Map<LeaveType>(request.CreateLeaveTypeDTO);
             var result = await _leaveTypeRepository.Add(leaveType);
