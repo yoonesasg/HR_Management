@@ -1,5 +1,6 @@
 ﻿using HR_Management.Application.Persistence.Contracts;
 using HR_Management.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -20,34 +21,39 @@ namespace HR_Management.Persistence.Repositories
             return entity;
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = await Get(id);
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task Delete(T entity)
+        public async Task Delete(T entity)
         {
-            throw new System.NotImplementedException();
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<bool> Exist(int id)
+        public async Task<bool> Exist(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = await Get(id);
+            return entity != null;
         }
 
-        public Task<T> Get(int id)
+        public async Task<T> Get(int id)
         {
-            throw new System.NotImplementedException();
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public Task<IReadOnlyList<T>> GetAll()
+        public async Task<IReadOnlyList<T>> GetAll()
         {
-            throw new System.NotImplementedException();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public Task Update(T entity)
+        public async Task Update(T entity)
         {
-            throw new System.NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
     }
 }

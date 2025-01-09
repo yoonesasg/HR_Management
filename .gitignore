@@ -4,3 +4,6 @@ HR_Management.Application/obj
 HR_Management.Domain/obj
 HR_Management.Domain/bin
 HR_Management.Persistence/obj/Debug
+HR_Management.Infrastructure/bin/Debug
+HR_Management.Infrastructure/obj/Debug
+HR_Management.Persistence/bin/Debug
