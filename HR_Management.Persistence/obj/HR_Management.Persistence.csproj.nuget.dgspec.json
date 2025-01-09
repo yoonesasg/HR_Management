@@ -4,14 +4,86 @@
     "D:\\Projects\\HR_Management\\HR_Management.Persistence\\HR_Management.Persistence.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\HR_Management\\HR_Management.Persistence\\HR_Management.Persistence.csproj": {
+    "D:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\HR_Management\\HR_Management.Persistence\\HR_Management.Persistence.csproj",
-        "projectName": "HR_Management.Persistence",
-        "projectPath": "D:\\Projects\\HR_Management\\HR_Management.Persistence\\HR_Management.Persistence.csproj",
+        "projectUniqueName": "D:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
+        "projectName": "HR_Management.Application",
+        "projectPath": "D:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj",
         "packagesPath": "C:\\Users\\Yoones\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\HR_Management\\HR_Management.Persistence\\obj\\",
+        "outputPath": "D:\\Projects\\HR_Management\\HR_Management.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yoones\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj": {
+                "projectPath": "D:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj",
+        "projectName": "HR_Management.Domain",
+        "projectPath": "D:\\Projects\\HR_Management\\HR_Management.Domain\\HR_Management.Domain.csproj",
+        "packagesPath": "C:\\Users\\Yoones\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\HR_Management\\HR_Management.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yoones\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +111,74 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\HR_Management\\HR_Management.Persistence\\HR_Management.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\HR_Management\\HR_Management.Persistence\\HR_Management.Persistence.csproj",
+        "projectName": "HR_Management.Persistence",
+        "projectPath": "D:\\Projects\\HR_Management\\HR_Management.Persistence\\HR_Management.Persistence.csproj",
+        "packagesPath": "C:\\Users\\Yoones\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\HR_Management\\HR_Management.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Yoones\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj": {
+                "projectPath": "D:\\Projects\\HR_Management\\HR_Management.Application\\HR_Management.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
