@@ -2478,6 +2478,7 @@
       "HR_Management.Application >= 1.0.0",
       "HR_Management.Infrastructure >= 1.0.0",
       "HR_Management.Persistence >= 1.0.0",
+      "MediatR >= 12.4.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.14",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.14",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -2532,6 +2533,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "MediatR": {
+            "target": "Package",
+            "version": "[12.4.1, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.14, )"
