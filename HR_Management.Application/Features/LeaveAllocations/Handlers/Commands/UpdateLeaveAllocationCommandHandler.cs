@@ -24,11 +24,11 @@ namespace HR_Management.Application.Features.LeaveAllocations.Handlers.Commands
         public async Task<Unit> Handle(UpdateLeaveAllocationCommand request, CancellationToken cancellationToken)
         {
             var validator = new UpdateLeaveAllocationDTOValidator(_leaveTypeRepository);
-            var validation = validator.Validate(request.LeaveAllocationDTO);
+            var validation = validator.Validate(request.UpdateLeaveAllocationDTO);
             if (!validation.IsValid)
                 throw new ValidationException(validation);
-            var leaveAllocation = await _leaveAllocationRepository.Get(request.LeaveAllocationDTO.Id);
-            _mapper.Map(request.LeaveAllocationDTO, leaveAllocation);
+            var leaveAllocation = await _leaveAllocationRepository.Get(request.UpdateLeaveAllocationDTO.Id);
+            _mapper.Map(request.UpdateLeaveAllocationDTO, leaveAllocation);
             await _leaveAllocationRepository.Update(leaveAllocation);
             return Unit.Value;
         }
