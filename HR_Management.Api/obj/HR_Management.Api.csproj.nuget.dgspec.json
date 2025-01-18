@@ -52,7 +52,7 @@
           "dependencies": {
             "MediatR": {
               "target": "Package",
-              "version": "[12.4.1, )"
+              "version": "[11.1.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -141,7 +141,11 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.4.1, )"
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
             }
           },
           "imports": [
