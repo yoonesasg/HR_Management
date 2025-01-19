@@ -9,7 +9,7 @@ using Moq;
 
 namespace HR_Management.Application.UnitTests.Mocks
 {
-    public static class LeaveTypeMockRepository
+    public static class MockLeaveRepository
     {
         public static Mock<ILeaveTypeRepository> GetLeaveTypeRepository()
         {
