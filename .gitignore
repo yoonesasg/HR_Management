@@ -10,3 +10,5 @@ HR_Management.Persistence/bin/Debug
 HR_Management.Infrastructure/obj
 HR_Management.Api/obj/Debug
 HR_Management.Api/bin/Debug
+HR_Management.Application.UnitTests/bin
+HR_Management.Application.UnitTests/obj
