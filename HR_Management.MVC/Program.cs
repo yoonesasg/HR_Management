@@ -1,7 +1,13 @@
+using HR_Management.MVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<IClient, Client>(
+    b=>b.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value)
+);
 
 var app = builder.Build();
 
