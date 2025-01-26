@@ -1,4 +1,5 @@
-using HR_Management.MVC.Services;
+using System.Reflection;
+using HR_Management.MVC.Services.Base;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient<IClient, Client>(
     b=>b.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value)
 );
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
