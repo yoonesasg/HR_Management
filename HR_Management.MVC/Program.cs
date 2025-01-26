@@ -1,4 +1,6 @@
 using System.Reflection;
+using HR_Management.MVC.Contracts;
+using HR_Management.MVC.Services;
 using HR_Management.MVC.Services.Base;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ builder.Services.AddHttpClient<IClient, Client>(
     b=>b.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value)
 );
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
 
 var app = builder.Build();
 
