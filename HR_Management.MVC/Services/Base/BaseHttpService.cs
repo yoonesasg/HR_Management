@@ -14,7 +14,7 @@ namespace HR_Management.MVC.Services.Base
             _client = client;
         }
 
-        protected Response<Guid> ConvertApiException(ApiException exception)
+        protected Response<Guid> ConvertApiException<Guid>(ApiException exception)
         {
             switch (exception.StatusCode)
             {

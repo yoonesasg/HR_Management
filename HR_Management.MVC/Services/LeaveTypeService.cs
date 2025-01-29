@@ -18,14 +18,16 @@ namespace HR_Management.MVC.Services
             _mapper = mapper;
         }
 
-        public Task<List<LeaveTypeViewModel>> GetLeaveTypes()
+        public async Task<List<LeaveTypeViewModel>> GetLeaveTypes()
         {
-            throw new NotImplementedException();
+            var leaveTypes = await _client.LeaveTypeAllAsync();
+            return _mapper.Map<List<LeaveTypeViewModel>>(leaveTypes);
         }
 
-        public Task<LeaveTypeViewModel> GetLeaveTypeDetails(int leaveTypeId)
+        public async Task<LeaveTypeViewModel> GetLeaveTypeDetails(int leaveTypeId)
         {
-            throw new NotImplementedException();
+            var leaveType = await _client.LeaveTypeGETAsync(leaveTypeId);
+            return _mapper.Map<LeaveTypeViewModel>(leaveType);
         }
 
         public async Task<Response<int>> CreateLeaveType(CreateLeaveTypeViewModel createLeaveTypeViewModel)
@@ -42,19 +44,35 @@ namespace HR_Management.MVC.Services
             }
             catch (ApiException e)
             {
+                return ConvertApiException<int>(e);
+            }
+        }
+
+        public async Task UpdateLeaveType(int id,LeaveTypeViewModel updateLeaveTypeViewModel)
+        {
+            try
+            {
+                var leaveType = _mapper.Map<UpdateLeaveTypeDTO>(updateLeaveTypeViewModel);
+                await _client.LeaveTypePUTAsync(id, leaveType);
+            }
+            catch (ApiException e)
+            {
                 Console.WriteLine(e);
                 throw;
             }
         }
 
-        public Task UpdateLeaveType(LeaveTypeViewModel updateLeaveTypeViewModel)
+        public async Task DeleteLeaveType(int leaveTypeId)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteLeaveType(int leaveTypeId)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                await _client.LeaveTypeDELETEAsync(leaveTypeId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
