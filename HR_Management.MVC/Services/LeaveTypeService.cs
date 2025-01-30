@@ -40,6 +40,7 @@ namespace HR_Management.MVC.Services
                 // TODO : Auth
 
                 await _client.LeaveTypePOSTAsync(createLeaveTypeDto);
+                responce.Success = true;
                 return responce;
             }
             catch (ApiException e)

@@ -45,7 +45,7 @@ namespace HR_Management.Api.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] UpdateLeaveTypeDTO leaveType)
         {
-            var command = new UpdateLeaveTypeCommand { UpdateLeaveTypeDTO = leaveType };
+            var command = new UpdateLeaveTypeCommand { Id = id, UpdateLeaveTypeDTO = leaveType };
             await _mediator.Send(command);
             return NoContent();
         }

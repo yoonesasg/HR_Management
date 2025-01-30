@@ -1,4 +1,5 @@
 ﻿using HR_Management.MVC.Contracts;
+using HR_Management.MVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,14 +15,14 @@ namespace HR_Management.MVC.Controllers
         }
         // GET: LeaveTypeController
         public async Task<ActionResult> Index()
-        {
+            {
             return View( await _leaveTypeService.GetLeaveTypes());
         }
 
         // GET: LeaveTypeController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            return View(await _leaveTypeService.GetLeaveTypeDetails(id));
         }
         
         // GET: LeaveTypeController/Create
@@ -33,32 +34,41 @@ namespace HR_Management.MVC.Controllers
         // POST: LeaveTypeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(CreateLeaveTypeViewModel model)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var response = await _leaveTypeService.CreateLeaveType(model);
+                if (response.Success)
+                {
+                    return RedirectToAction("Index", "LeaveType");
+                }
+                ModelState.AddModelError("",response.ValidationErrors);
+                return View();
             }
-            catch
+            catch(Exception exception)
             {
+                ModelState.AddModelError("",exception.Message);
                 return View();
             }
         }
 
         // GET: LeaveTypeController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
-            return View();
+            var leaveType = await _leaveTypeService.GetLeaveTypeDetails(id);
+            return View(leaveType);
         }
 
         // POST: LeaveTypeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(int id,LeaveTypeViewModel model)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                await _leaveTypeService.UpdateLeaveType(id,model);
+                return RedirectToAction("Index", "LeaveType");
             }
             catch
             {
@@ -67,24 +77,10 @@ namespace HR_Management.MVC.Controllers
         }
 
         // GET: LeaveTypeController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
-        }
-
-        // POST: LeaveTypeController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            await _leaveTypeService.DeleteLeaveType(id);
+            return RedirectToAction("Index");
         }
     }
 }

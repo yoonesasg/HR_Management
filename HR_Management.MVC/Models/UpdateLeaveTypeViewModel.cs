@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HR_Management.MVC.Models
 {
-    public class LeaveTypeViewModel
+    public class UpdateLeaveTypeViewModel
     {
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [DisplayName("Default Day")]
+        [DisplayName("DefaultDay")]
         public int DefaultDay { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace HR_Management.Application.Features.LeaveTypes.Handlers.Commands
             var validation = validator.Validate(request.UpdateLeaveTypeDTO);
             if (!validation.IsValid)
                 throw new ValidationException(validation);
-            var leaveType = await _leaveTypeRepository.Get(request.UpdateLeaveTypeDTO.Id);
+            var leaveType = await _leaveTypeRepository.Get(request.Id);
             _mapper.Map(request.UpdateLeaveTypeDTO, leaveType);
             await _leaveTypeRepository.Update(leaveType);
             return Unit.Value;
