@@ -2,7 +2,7 @@
 
 namespace HR_Management.Application.Models.Identity
 {
-    public class RegisterationRequest
+    public class RegistrationRequest
     {
         [Required]
         public string FirstName { get; set; }
